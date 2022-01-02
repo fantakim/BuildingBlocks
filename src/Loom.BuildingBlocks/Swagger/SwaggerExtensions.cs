@@ -7,6 +7,7 @@ namespace Microsoft.Extensions.DependencyInjection
     public static class SwaggerExtensions
     {
         public static IServiceCollection AddCustomSwagger(this IServiceCollection services, IApiInfo apiInfo) => services
+            .AddEndpointsApiExplorer()
             .AddSwaggerGen(options =>
             {
                 options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
@@ -28,6 +29,7 @@ namespace Microsoft.Extensions.DependencyInjection
             .UseSwagger()
             .UseSwaggerUI(options =>
             {
+                options.DocumentTitle = apiInfo.Title;
                 options.SwaggerEndpoint($"/swagger/{apiInfo.Version}/swagger.json", $"{apiInfo.Title} {apiInfo.Version}");
 
                 if (apiInfo.AuthenticationAuthority != null)

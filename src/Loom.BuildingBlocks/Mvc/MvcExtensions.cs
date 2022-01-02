@@ -9,6 +9,13 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class MvcExtensions
     {
+        public static IServiceCollection AddCustomMvc(this IServiceCollection services)
+        {
+            services.AddMvc();
+
+            return services;
+        }
+
         public static IServiceCollection AddCustomIdentity(this IServiceCollection services, IApiInfo apiInfo)
         {
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
@@ -38,7 +45,6 @@ namespace Microsoft.Extensions.DependencyInjection
                     .AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader()
-                    .AllowCredentials()
                 );
             });
 
