@@ -4,7 +4,7 @@ using Loom.BuildingBlocks.Sample;
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddUserSecrets<Program>(optional: true);
 
-var apiInfo = ApiInfo.Instantiate(builder.Configuration);
+var apiInfo = ApiInfo.From(builder.Configuration);
 
 // Add services to the container.
 builder.Services
