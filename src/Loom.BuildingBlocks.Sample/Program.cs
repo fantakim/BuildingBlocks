@@ -1,5 +1,4 @@
 using Loom.BuildingBlocks.Mediatr.Autofac;
-using Loom.BuildingBlocks.Mediatr.Exceptions;
 using Loom.BuildingBlocks.Sample;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,14 +15,18 @@ builder.Services
     .AddCustomSwagger(ApiInfo.Instance)
     .ConvertToAutofac(MediatrModule.Create(ApiInfo.Instance.ApplicationAssembly));
 
+builder.Services
+    .AddIdentityServer()
+    .AddDeveloperSigningCredential();
+
 var app = builder.Build();
 
 app.UsePermissiveCors();
 app.UseAuthentication();
 app.UseCustomSwagger(apiInfo);
+app.UseIdentityServer();
 
 // Configure the HTTP request pipeline.
-
 app.UseHttpsRedirection();
 
 var summaries = new[]

@@ -14,23 +14,31 @@ namespace Loom.BuildingBlocks.Sample
 
         public ApiInfo(IConfiguration configuration)
         {
-            AuthenticationAuthority = configuration["AuthenticationAuthority"];
+            Title = configuration["Title"];
+            Version = configuration["Version"];
+            Authority = configuration["AuthServer:Authority"];
+            Audience = configuration["AuthServer:Audience"];
+            SwaggerClientId = configuration["AuthServer:SwaggerClientId"];
+            SwaggerClientSecret = configuration["AuthServer:SwaggerClientSecret"];
+            RequireHttpsMetadata = Convert.ToBoolean(configuration["AuthServer:RequireHttpsMetadata"]);
         }
 
-        public string AuthenticationAuthority { get; }
+        public string Title { get; }
 
-        public string JwtBearerAudience => "sample-api";
+        public string Version { get; }
 
-        public string Code => "sample-api";
+        public string Authority { get; }
 
-        public string Title => "Sample API";
+        public string Audience { get; }
 
-        public string Version => "v1";
+        public string SwaggerClientId { get; }
 
-        public Assembly ApplicationAssembly => GetType().Assembly;
+        public string SwaggerClientSecret { get; }
 
-        public SwaggerAuthInfo SwaggerAuthInfo => new SwaggerAuthInfo("sample-swagger-ui", "", "");
+        public bool RequireHttpsMetadata { get; }
 
         public IDictionary<string, string> Scopes => new Dictionary<string, string> { { "sample-api", Title } };
+
+        public Assembly ApplicationAssembly => GetType().Assembly;
     }
 }

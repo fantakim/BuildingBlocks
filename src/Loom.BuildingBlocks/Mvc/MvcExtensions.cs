@@ -27,9 +27,9 @@ namespace Microsoft.Extensions.DependencyInjection
 
             }).AddJwtBearer(options =>
             {
-                options.Authority = apiInfo.AuthenticationAuthority;
-                options.Audience = apiInfo.JwtBearerAudience;
-                options.RequireHttpsMetadata = false;
+                options.Authority = apiInfo.Authority;
+                options.Audience = apiInfo.Audience;
+                options.RequireHttpsMetadata = apiInfo.RequireHttpsMetadata;
             });
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

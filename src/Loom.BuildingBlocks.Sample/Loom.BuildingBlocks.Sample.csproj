@@ -3,7 +3,12 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>0363bffc-0c54-4ee7-8d08-2b450069cc8f</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IdentityServer4.AspNetIdentity" Version="4.1.2" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Loom.BuildingBlocks\Loom.BuildingBlocks.csproj" />
