@@ -3,9 +3,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
-    public static class MediatrExtensions
+    public static class MediatrServiceCollectionExtensions
     {
-        public static IServiceCollection AddRequestManager(this IServiceCollection services, IConfiguration configuration) => services
+        public static IServiceCollection AddLoomRequestManager(this IServiceCollection services, IConfiguration configuration) => services
             .AddSingleton<IRequestManager, InMemoryRequestManager>();
     }
 }

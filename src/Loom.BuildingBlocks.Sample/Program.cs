@@ -9,10 +9,10 @@ var apiInfo = ApiInfo.From(builder.Configuration);
 // Add services to the container.
 builder.Services
     .AddSingleton(apiInfo)
-    .AddCustomMvc()
-    .AddPermissiveCors()
-    .AddCustomIdentity(ApiInfo.Instance)
-    .AddCustomSwagger(ApiInfo.Instance)
+    .AddLoomMvc()
+    .AddLoomPermissiveCors()
+    .AddLoomIdentity(ApiInfo.Instance)
+    .AddLoomSwagger(ApiInfo.Instance)
     .ConvertToAutofac(MediatrModule.Create(ApiInfo.Instance.ApplicationAssembly));
 
 builder.Services
@@ -21,9 +21,9 @@ builder.Services
 
 var app = builder.Build();
 
-app.UsePermissiveCors();
+app.UseLoomPermissiveCors();
 app.UseAuthentication();
-app.UseCustomSwagger(apiInfo);
+app.UseLoomSwagger(apiInfo);
 app.UseIdentityServer();
 
 // Configure the HTTP request pipeline.

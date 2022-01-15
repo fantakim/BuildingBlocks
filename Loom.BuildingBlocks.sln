@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loom.BuildingBlocks", "src\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E7C2B8D2-C35D-438C-9380-259C77227C3D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loom.BuildingBlocks.Sample", "src\Loom.BuildingBlocks.Sample\Loom.BuildingBlocks.Sample.csproj", "{D583E617-93AF-4304-B5C8-0732F68DDD6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Loom.BuildingBlocks.Sample", "src\Loom.BuildingBlocks.Sample\Loom.BuildingBlocks.Sample.csproj", "{D583E617-93AF-4304-B5C8-0732F68DDD6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loom.BuildingBlocks.IdentityServer", "src\Loom.BuildingBlocks.IdentityServer\Loom.BuildingBlocks.IdentityServer.csproj", "{5814FA7B-C1F1-4CF4-B8A7-D0416CBB1223}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{D583E617-93AF-4304-B5C8-0732F68DDD6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D583E617-93AF-4304-B5C8-0732F68DDD6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D583E617-93AF-4304-B5C8-0732F68DDD6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5814FA7B-C1F1-4CF4-B8A7-D0416CBB1223}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5814FA7B-C1F1-4CF4-B8A7-D0416CBB1223}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5814FA7B-C1F1-4CF4-B8A7-D0416CBB1223}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5814FA7B-C1F1-4CF4-B8A7-D0416CBB1223}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -30,6 +36,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{4CE9FFCD-EE0A-416F-9D57-C24B4341198B} = {E7C2B8D2-C35D-438C-9380-259C77227C3D}
 		{D583E617-93AF-4304-B5C8-0732F68DDD6D} = {E7C2B8D2-C35D-438C-9380-259C77227C3D}
+		{5814FA7B-C1F1-4CF4-B8A7-D0416CBB1223} = {E7C2B8D2-C35D-438C-9380-259C77227C3D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0CA2AB4F-FC6A-4149-8F80-B5C8DA2F6028}

@@ -7,16 +7,16 @@ using System.IdentityModel.Tokens.Jwt;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
-    public static class MvcExtensions
+    public static class MvcServiceCollectionExtensions
     {
-        public static IServiceCollection AddCustomMvc(this IServiceCollection services)
+        public static IServiceCollection AddLoomMvc(this IServiceCollection services)
         {
             services.AddMvc();
 
             return services;
         }
 
-        public static IServiceCollection AddCustomIdentity(this IServiceCollection services, IApiInfo apiInfo)
+        public static IServiceCollection AddLoomIdentity(this IServiceCollection services, IApiInfo apiInfo)
         {
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
@@ -38,7 +38,7 @@ namespace Microsoft.Extensions.DependencyInjection
             return services;
         }
 
-        public static IServiceCollection AddPermissiveCors(this IServiceCollection services) => services
+        public static IServiceCollection AddLoomPermissiveCors(this IServiceCollection services) => services
             .AddCors(options =>
             {
                 options.AddPolicy("PermissiveCorsPolicy", builder => builder
@@ -48,6 +48,6 @@ namespace Microsoft.Extensions.DependencyInjection
                 );
             });
 
-        public static IApplicationBuilder UsePermissiveCors(this IApplicationBuilder app) => app.UseCors("PermissiveCorsPolicy");
+        public static IApplicationBuilder UseLoomPermissiveCors(this IApplicationBuilder app) => app.UseCors("PermissiveCorsPolicy");
     }
 }

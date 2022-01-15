@@ -6,7 +6,7 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class SwaggerApplicationBuilderExtensions
     {
-        public static IApplicationBuilder UseCustomSwagger(this IApplicationBuilder app, IApiInfo apiInfo, Action<SwaggerUIOptions> setupAction = null) => app
+        public static IApplicationBuilder UseLoomSwagger(this IApplicationBuilder app, IApiInfo apiInfo, Action<SwaggerUIOptions> setupAction = null) => app
             .UseSwagger()
             .UseSwaggerUI(options =>
             {

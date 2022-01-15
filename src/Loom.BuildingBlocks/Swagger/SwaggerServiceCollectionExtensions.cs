@@ -6,7 +6,7 @@ namespace Microsoft.Extensions.DependencyInjection
 {
     public static class SwaggerServiceCollectionExtensions
     {
-        public static IServiceCollection AddCustomSwagger(this IServiceCollection services, IApiInfo apiInfo, Action<SwaggerGenOptions> setupAction = null) => services
+        public static IServiceCollection AddLoomSwagger(this IServiceCollection services, IApiInfo apiInfo, Action<SwaggerGenOptions> setupAction = null) => services
             .AddEndpointsApiExplorer()
             .AddSwaggerGen(options =>
             {

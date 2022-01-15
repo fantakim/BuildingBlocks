@@ -4,7 +4,7 @@ using Autofac.Extensions.DependencyInjection;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
-    public static class AutofacExtensions
+    public static class AutofacServiceCollectionExtensions
     {
         public static IServiceProvider ConvertToAutofac(this IServiceCollection services, params IModule[] modules)
         {
