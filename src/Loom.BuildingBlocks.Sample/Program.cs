@@ -9,22 +9,19 @@ var apiInfo = ApiInfo.From(builder.Configuration);
 // Add services to the container.
 builder.Services
     .AddSingleton(apiInfo)
-    .AddLoomMvc()
-    .AddLoomPermissiveCors()
     .AddLoomIdentity(ApiInfo.Instance)
+    .AddLoomIdentityServer()
     .AddLoomSwagger(ApiInfo.Instance)
+    .AddLoomPermissiveCors()
+    .AddLoomMvc()
     .ConvertToAutofac(MediatrModule.Create(ApiInfo.Instance.ApplicationAssembly));
-
-builder.Services
-    .AddIdentityServer()
-    .AddDeveloperSigningCredential();
 
 var app = builder.Build();
 
-app.UseLoomPermissiveCors();
 app.UseAuthentication();
+app.UseLoomPermissiveCors();
+app.UseLoomIdentityServer();
 app.UseLoomSwagger(apiInfo);
-app.UseIdentityServer();
 
 // Configure the HTTP request pipeline.
 app.UseHttpsRedirection();

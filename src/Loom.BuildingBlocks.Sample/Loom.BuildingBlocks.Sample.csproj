@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Loom.BuildingBlocks.IdentityServer\Loom.BuildingBlocks.IdentityServer.csproj" />
     <ProjectReference Include="..\Loom.BuildingBlocks\Loom.BuildingBlocks.csproj" />
   </ItemGroup>
 

@@ -17,7 +17,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 {
                     options.OAuthClientId(apiInfo.SwaggerClientId);
                     options.OAuthClientSecret(apiInfo.SwaggerClientSecret);
-                    options.OAuthAppName($"{apiInfo.Title} - ${apiInfo.Version} - Swagger UI");
+                    options.OAuthAppName($"{apiInfo.Title} - {apiInfo.Version} - Swagger UI");
                     options.RoutePrefix = string.Empty;
                 }
             });

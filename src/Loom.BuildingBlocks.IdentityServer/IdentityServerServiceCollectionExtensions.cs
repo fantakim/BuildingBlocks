@@ -1,6 +1,6 @@
 ﻿using IdentityServer4.Configuration;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.DependencyInjection;
+using IdentityServer4.Models;
+using IdentityServer4.Test;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
@@ -10,11 +10,14 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             // https://www.scottbrady91.com/identity-server/getting-started-with-identityserver-4
             services
-                .AddIdentityServer(setupAction)
-                .AddDeveloperSigningCredential()
-                .AddAspNetIdentity<IdentityUser>();
+                .AddIdentityServer()
+                .AddInMemoryClients(new List<Client>())
+                .AddInMemoryIdentityResources(new List<IdentityResource>())
+                .AddInMemoryApiResources(new List<ApiResource>())
+                .AddInMemoryApiScopes(new List<ApiScope>())
+                .AddTestUsers(new List<TestUser>())
+                .AddDeveloperSigningCredential();
                 
-
             return services;
         }
     }
