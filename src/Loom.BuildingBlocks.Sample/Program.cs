@@ -10,7 +10,7 @@ var apiInfo = ApiInfo.From(builder.Configuration);
 builder.Services
     .AddSingleton(apiInfo)
     .AddLoomIdentity(ApiInfo.Instance)
-    .AddLoomIdentityServer()
+    .AddLoomIdentityServerWithInMemory()
     .AddLoomSwagger(ApiInfo.Instance)
     .AddLoomPermissiveCors()
     .AddLoomMvc()
